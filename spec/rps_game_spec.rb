@@ -35,7 +35,6 @@ describe RPSGame do
     let(:choices) { [:scissors, :rock, :paper] }
     it "should return the computer's play" do
       game = RPSGame.new(:rock)
-
       expect(choices).to include(game.computer_play)
     end
   end
@@ -43,22 +42,19 @@ describe RPSGame do
   describe "#won?" do
     it "should return true if the player won" do
       game = RPSGame.new(:rock)
-      allow(game).to receive(:computer_play) { :scissors }
-
+      game.instance_variable_set(:@computer_play, :scissors)
       expect(game.won?).to eq(true)
     end
 
     it "should return false if the player lost" do
       game = RPSGame.new(:rock)
-      allow(game).to receive(:computer_play) { :paper }
-
+      game.instance_variable_set(:@computer_play, :paper)
       expect(game.won?).to eq(false)
     end
 
     it "should return false if the player tied" do
       game = RPSGame.new(:rock)
-      allow(game).to receive(:computer_play) { :rock }
-
+      game.instance_variable_set(:@computer_play, :rock)
       expect(game.won?).to eq(false)
     end
   end
@@ -66,22 +62,19 @@ describe RPSGame do
   describe "#tied?" do
     it "should return true if the player tied" do
       game = RPSGame.new(:rock)
-      allow(game).to receive(:computer_play) { :rock }
-
+      game.instance_variable_set(:@computer_play, :rock)
       expect(game.tied?).to eq(true)
     end
 
     it "should return false if the player won" do
       game = RPSGame.new(:rock)
-      allow(game).to receive(:computer_play) { :scissors }
-
+      game.instance_variable_set(:@computer_play, :scissors)
       expect(game.tied?).to eq(false)
     end
 
     it "should return false if the player lost" do
       game = RPSGame.new(:rock)
-      allow(game).to receive(:computer_play) { :paper }
-
+      game.instance_variable_set(:@computer_play, :paper)
       expect(game.tied?).to eq(false)
     end
   end
@@ -89,22 +82,19 @@ describe RPSGame do
   describe "#lost?" do
     it "should return true if the player lost" do
       game = RPSGame.new(:rock)
-      allow(game).to receive(:computer_play) { :paper }
-
+      game.instance_variable_set(:@computer_play, :paper)
       expect(game.lost?).to eq(true)
     end
 
     it "should return false if the player won" do
       game = RPSGame.new(:rock)
-      allow(game).to receive(:computer_play) { :scissors }
-
+      game.instance_variable_set(:@computer_play, :scissors)
       expect(game.lost?).to eq(false)
     end
 
     it "should return false if the player tied" do
       game = RPSGame.new(:rock)
-      allow(game).to receive(:computer_play) { :rock }
-
+      game.instance_variable_set(:@computer_play, :rock)
       expect(game.lost?).to eq(false)
     end
   end
