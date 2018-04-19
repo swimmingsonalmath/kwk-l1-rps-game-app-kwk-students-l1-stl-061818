@@ -29,4 +29,4 @@ the player made, the move that the computer made, and whether the player won,
 lost, or tied. 
 
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/hs-rps-game-app' title='Rock, Paper, Scissors'>Rock, Paper, Scissors</a> on Learn.co and start learning to code for free.</p>
+<p data-visibility='hidden'>KWK-L1 ---</p>
